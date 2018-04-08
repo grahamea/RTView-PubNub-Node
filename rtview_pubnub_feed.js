@@ -10,8 +10,34 @@ const util = require("util");
 const request = require("request");
 
 var rtview_utils = require('./rtview_utils.js');
-rtview_utils.set_targeturl('http://localhost:3275');            // this is the default
-//rtview_utils.set_targeturl('http://localhost:3270/rtvpost');  // to use servlet instead of port
+
+// Default target URL
+var target_url = "http://localhost:3275";
+
+
+// utility function check arg str is a valid non blank string 
+function isValidStr(str) {
+    return (
+        (typeof str != "undefined") &&
+        (typeof str.valueOf() == "string") &&
+        (str.length > 0) && (str.trim().length > 0));
+
+}
+
+
+// set target_url var using Environment variable "TARGET_URL" if set 
+if (isValidStr(process.env.TARGET_URL)) {
+    target_url = process.env.TARGET_URL;
+}
+
+// set target_url var using command line arg if set 
+if (process.argv.length >=2 && isValidStr(process.argv[2])) {
+    target_url = process.argv[2];
+}
+
+// Set target URL to post data to
+rtview_utils.set_targeturl(target_url);           
+
 
 // Name of the RTView caches created in this demo
 var cacheName1 = 'PubNubMarketData';
