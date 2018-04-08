@@ -9,6 +9,9 @@
   ],
   "homepage": "http://www.sl.com",
   "main": "rtview_pubnub_feed.js",
+  "scripts": {
+    "start": "rtview_pubnub_feed.js"
+  },
   "engines": [
     "node"
   ],
