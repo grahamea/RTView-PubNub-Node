@@ -16,6 +16,12 @@ RUN npm install
 # Bundle app source
 COPY . .
 
+# Provide a default TARGET_URL environment variable
+# servlet post example
+# ENV TARGET_URL http://rtviewdataserver:3270/rtvpost
+# direct http post example
+ENV TARGET_URL http://rtviewdataserver:3275
+
 # Expose any used ports
 # EXPOSE 8080
 
