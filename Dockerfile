@@ -18,9 +18,9 @@ COPY . .
 
 # Provide a default TARGET_URL environment variable
 # servlet post example
-# ENV TARGET_URL http://rtviewdataserver:3270/rtvpost
+# ENV TARGET_URL http://rtview-dataserver:3270/rtvpost
 # direct http post example
-ENV TARGET_URL http://rtviewdataserver:3275
+ENV TARGET_URL http://rtview-dataserver:3275
 
 # Expose any used ports
 # EXPOSE 8080
