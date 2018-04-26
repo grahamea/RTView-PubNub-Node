@@ -12,7 +12,7 @@ const request = require("request");
 var rtview_utils = require('./rtview_utils.js');
 
 // Default target URL
-var target_url = "http://localhost:3275";
+var target_url = "http://rtview-dataserver:3275";
 
 
 // utility function check arg str is a valid non blank string 
